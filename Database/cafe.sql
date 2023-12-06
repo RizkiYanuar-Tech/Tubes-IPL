@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 06, 2023 at 04:24 AM
--- Server version: 10.4.32-MariaDB
--- PHP Version: 8.2.12
+-- Generation Time: Dec 06, 2023 at 08:59 AM
+-- Server version: 10.4.28-MariaDB
+-- PHP Version: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -34,6 +34,20 @@ CREATE TABLE `pelanggan` (
   `No_HP` int(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pemesan`
+--
+
+CREATE TABLE `pemesan` (
+  `ID_Pemesan` int(5) NOT NULL,
+  `ID_Menu` int(5) NOT NULL,
+  `ID_Pelanggan` int(5) NOT NULL,
+  `Tanggal_Pemesanan` date NOT NULL,
+  `Total_Harga` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
 --
 -- Indexes for dumped tables
 --
@@ -43,6 +57,12 @@ CREATE TABLE `pelanggan` (
 --
 ALTER TABLE `pelanggan`
   ADD PRIMARY KEY (`ID_Pelanggan`);
+
+--
+-- Indexes for table `pemesan`
+--
+ALTER TABLE `pemesan`
+  ADD PRIMARY KEY (`ID_Pemesan`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 06, 2023 at 08:59 AM
--- Server version: 10.4.28-MariaDB
--- PHP Version: 8.2.4
+-- Waktu pembuatan: 07 Des 2023 pada 15.05
+-- Versi server: 10.4.27-MariaDB
+-- Versi PHP: 8.0.25
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,20 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pelanggan`
+-- Struktur dari tabel `karyawan`
+--
+
+CREATE TABLE `karyawan` (
+  `ID_Karyawan` int(5) NOT NULL,
+  `Nama` varchar(20) NOT NULL,
+  `Posisi` varchar(20) NOT NULL,
+  `Gaji` int(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `pelanggan`
 --
 
 CREATE TABLE `pelanggan` (
@@ -37,7 +50,7 @@ CREATE TABLE `pelanggan` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pemesan`
+-- Struktur dari tabel `pemesan`
 --
 
 CREATE TABLE `pemesan` (
@@ -53,13 +66,19 @@ CREATE TABLE `pemesan` (
 --
 
 --
--- Indexes for table `pelanggan`
+-- Indeks untuk tabel `karyawan`
+--
+ALTER TABLE `karyawan`
+  ADD PRIMARY KEY (`ID_Karyawan`);
+
+--
+-- Indeks untuk tabel `pelanggan`
 --
 ALTER TABLE `pelanggan`
   ADD PRIMARY KEY (`ID_Pelanggan`);
 
 --
--- Indexes for table `pemesan`
+-- Indeks untuk tabel `pemesan`
 --
 ALTER TABLE `pemesan`
   ADD PRIMARY KEY (`ID_Pemesan`);

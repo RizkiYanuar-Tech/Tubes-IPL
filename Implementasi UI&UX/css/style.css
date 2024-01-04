@@ -1,6 +1,14 @@
 :root {
-  --bg: #1b1b1d;
+  --bg: #ffffff;
   --primary: #fe5303;
+  --orange: #ff7800;
+  --green: green;
+  --black: black;
+  --light-color: #666;
+  --box-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, .1);
+  --border: .2rem solid rgba(0, 0, 0, .1);
+  --outline: .1rem solid rgba(0, 0, 0, .1);
+  --outline-hover: 2.rem solid var(var(--black))
 }
 
 * {
@@ -80,6 +88,79 @@ body {
 #hamburger-menu {
   display: none;
 }
+
+/* Tambahkan pada file style.css */
+.btn-tambah-menu {
+  background-color: #4caf50;
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-left: 10px; /* Sesuaikan dengan kebutuhan */
+}
+
+.btn-tambah-menu:hover {
+  background-color: #45a049;
+}
+
+/* Text */
+.heading {
+  text-align: center;
+  padding: 10rem 0;
+  padding-bottom: 3rem;
+  font-size: 2.5rem;
+  color: #1d1a1a;
+}
+.heading span {
+  background: var(--green);
+  color: #fff;
+  display: inline-block;
+  padding: 5px 3px;
+  clip-path: inset(100% 0, 93% 50%, 100% 99%, 0% 100%, 7% 50%, 0% 0%);
+}
+
+.features .box-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  gap: 1rem;
+}
+
+.features .box-container .box {
+  padding: 3rem 2rem;
+  background: #fff;
+  outline: var(--outline);
+  outline-offset: -1rem;
+  text-align: center;
+  box-shadow: var(--box-shadow);
+}
+
+.features .box-container .box:hover {
+  outline: var(--outline-hover);
+  outline-offset: -0rem;
+}
+
+.features .box-container .box img {
+  margin: -1rem 0;
+  height: 8rem;
+  width: 8rem;
+}
+
+.features .box-container .box h3 {
+  font-size: 2.5rem;
+  line-height: 1.8;
+  color: var(--black);
+}
+
+.features .box-container .box p {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--light-color);
+  padding: 1rem 0;
+}
+/* end Text */
+
 
 /*Hero Section Start*/
 .hero {
@@ -220,6 +301,229 @@ body {
 
 /*About Section End*/
 
+/* Menu start */
+
+
+/* <!-- Menu Card Section starts --> */
+
+.card-container {
+  width: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin: 3rem auto;
+}
+
+.card {
+  width: 250px;
+  height: 250px;
+  border-radius: 30px;
+  background-color: #fff;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all .25s ease;
+  backface-visibility: hidden;
+  margin-top: 40px;
+}
+ h2{
+  color: #fff;
+ }
+.card:hover {
+  transform: scale(.9);
+}
+
+.card:hover:after {
+  height: 280px;
+}
+
+.card:hover .con-text p {
+  margin-bottom: 0px;
+  opacity: 1;
+  font-size: 130%;
+}
+
+.card:hover img {
+  transform: scale(1.25);
+}
+
+.card:hover .ul {
+  transform: translate(0);
+  opacity: 1;
+}
+
+.card:after {
+  width: 100%;
+  content: '';
+  left: 0px;
+  bottom: 0px;
+  height: 150px;
+  position: absolute;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0, 1) 100%);
+  z-index: 20;
+  transition: all .25s ease;
+}
+
+.card img {
+  height: 150%;
+  z-index: 10;
+  transition: all .25s ease;
+}
+
+.card .con-text {
+  z-index: 30;
+  position: absolute;
+  bottom: 0px;
+  color: #fff;
+  padding: 20px;
+  padding-bottom: 30px;
+}
+
+.card .con-text p {
+  font-size: .8rem;
+  opacity: 0;
+  margin-bottom: -170px;
+  transition: all .25s ease;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-direction: column;
+  font-size: 130%;
+}
+
+.card .con-text p button {
+  padding: 7px 17px;
+  border-radius: 12px;
+  background: transparent;
+  border: 2px solid #fff;
+  color: #fff;
+  margin-top: 10px;
+  margin-left: auto;
+  cursor: pointer;
+  transition: all .25s ease;
+  font-family: poppins;
+  font-size: .75rem;
+  outline: none;
+}
+
+.card .con-text p button:hover {
+  background: #fff;
+  color: #000;
+}
+
+.ul {
+  position: absolute;
+  right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  z-index: 40;
+  border-radius: 14px;
+  padding-left: 0px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  top: 0px;
+  opacity: 0;
+  transform: translate(100%);
+  transition: all .25s ease;
+}
+
+.ul li {
+  background: #fff;
+  list-style: none;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: .7;
+  transition: all .25s ease;
+  backface-visibility: hidden;
+}
+
+.ul li:last-child {
+  border-radius: 0px 0px 12px 12px;
+}
+
+.ul li:first-child {
+  border-radius: 12px 12px 0px 0px;
+}
+
+.ul li:hover {
+  opacity: 1;
+  transform: translate(-7px, -4px);
+  border-radius: 6px;
+}
+
+.ul li i {
+  font-size: 1.4rem;
+  color: #000;
+}
+
+
+/* <!-- Menu Card Section end --> */
+
+
+/* Menu End */
+
+/* Tambah Menu Start */
+body {
+  width: 100%;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+.container {
+  max-width: 400px;
+  margin: 50px auto;
+  background-color: #fff;
+  padding: 50px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  text-align: center;
+  color: #000;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: #4caf50;
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+/* tambah Menu End */
 /*---------------------------------------------------------------------------------------*/
 /* Media Queries */
 

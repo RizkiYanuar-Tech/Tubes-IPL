@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 07, 2023 at 07:22 PM
--- Server version: 10.4.32-MariaDB
--- PHP Version: 8.2.12
+-- Generation Time: Jan 04, 2024 at 02:05 PM
+-- Server version: 10.4.28-MariaDB
+-- PHP Version: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,14 +24,13 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `karyawan`
+-- Table structure for table `kasir`
 --
 
-CREATE TABLE `karyawan` (
-  `ID_Karyawan` int(5) NOT NULL,
-  `Nama` varchar(20) NOT NULL,
-  `Posisi` varchar(20) NOT NULL,
-  `Gaji` int(20) NOT NULL
+CREATE TABLE `kasir` (
+  `ID_Kasir` int(5) NOT NULL,
+  `Nama` varchar(30) NOT NULL,
+  `gaji` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -41,7 +40,7 @@ CREATE TABLE `karyawan` (
 --
 
 CREATE TABLE `menu` (
-  `ID_Menu` int(11) NOT NULL,
+  `ID_Menu` int(5) NOT NULL,
   `Nama_Menu` varchar(30) NOT NULL,
   `Deskripsi` varchar(20) NOT NULL,
   `Harga` int(10) NOT NULL,
@@ -64,6 +63,19 @@ CREATE TABLE `pelanggan` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `pelayan`
+--
+
+CREATE TABLE `pelayan` (
+  `ID_Pelayan` int(5) NOT NULL,
+  `Nama` varchar(20) NOT NULL,
+  `Posisi` varchar(20) NOT NULL,
+  `Gaji` int(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `pemesan`
 --
 
@@ -71,9 +83,22 @@ CREATE TABLE `pemesan` (
   `ID_Pesanan` int(5) NOT NULL,
   `ID_Menu` int(5) NOT NULL,
   `ID_Pelanggan` int(5) NOT NULL,
-  `ID_Karyawan` int(5) NOT NULL,
+  `ID_Pelayan` int(5) NOT NULL,
   `Tanggal_Pemesanan` date NOT NULL,
   `Total_Harga` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `transaksi`
+--
+
+CREATE TABLE `transaksi` (
+  `ID_Transaksi` int(5) NOT NULL,
+  `Metode_Bayar` varchar(20) NOT NULL,
+  `Tanggal_Transaksi` date NOT NULL,
+  `Total_Bayar` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -81,10 +106,10 @@ CREATE TABLE `pemesan` (
 --
 
 --
--- Indexes for table `karyawan`
+-- Indexes for table `kasir`
 --
-ALTER TABLE `karyawan`
-  ADD PRIMARY KEY (`ID_Karyawan`);
+ALTER TABLE `kasir`
+  ADD PRIMARY KEY (`ID_Kasir`);
 
 --
 -- Indexes for table `menu`
@@ -99,13 +124,25 @@ ALTER TABLE `pelanggan`
   ADD PRIMARY KEY (`ID_Pelanggan`);
 
 --
+-- Indexes for table `pelayan`
+--
+ALTER TABLE `pelayan`
+  ADD PRIMARY KEY (`ID_Pelayan`);
+
+--
 -- Indexes for table `pemesan`
 --
 ALTER TABLE `pemesan`
   ADD PRIMARY KEY (`ID_Pesanan`),
   ADD KEY `FK_Menu` (`ID_Menu`),
   ADD KEY `FK_Pelanggan` (`ID_Pelanggan`),
-  ADD KEY `FK_Karyawan` (`ID_Karyawan`);
+  ADD KEY `FK_Karyawan` (`ID_Pelayan`);
+
+--
+-- Indexes for table `transaksi`
+--
+ALTER TABLE `transaksi`
+  ADD PRIMARY KEY (`ID_Transaksi`);
 
 --
 -- Constraints for dumped tables
@@ -115,7 +152,7 @@ ALTER TABLE `pemesan`
 -- Constraints for table `pemesan`
 --
 ALTER TABLE `pemesan`
-  ADD CONSTRAINT `FK_Karyawan` FOREIGN KEY (`ID_Karyawan`) REFERENCES `karyawan` (`ID_Karyawan`),
+  ADD CONSTRAINT `FK_Karyawan` FOREIGN KEY (`ID_Pelayan`) REFERENCES `pelayan` (`ID_Pelayan`),
   ADD CONSTRAINT `FK_Menu` FOREIGN KEY (`ID_Menu`) REFERENCES `menu` (`ID_Menu`),
   ADD CONSTRAINT `FK_Pelanggan` FOREIGN KEY (`ID_Pelanggan`) REFERENCES `pelanggan` (`ID_Pelanggan`);
 COMMIT;

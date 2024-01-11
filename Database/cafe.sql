@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 04, 2024 at 02:05 PM
--- Server version: 10.4.28-MariaDB
--- PHP Version: 8.2.4
+-- Waktu pembuatan: 11 Jan 2024 pada 06.42
+-- Versi server: 10.4.27-MariaDB
+-- Versi PHP: 8.0.25
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,20 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `kasir`
+-- Struktur dari tabel `karyawan`
+--
+
+CREATE TABLE `karyawan` (
+  `ID_Karyawan` int(5) NOT NULL,
+  `Nama` varchar(20) NOT NULL,
+  `Posisi` varchar(20) NOT NULL,
+  `Gaji` int(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `kasir`
 --
 
 CREATE TABLE `kasir` (
@@ -36,7 +49,7 @@ CREATE TABLE `kasir` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `menu`
+-- Struktur dari tabel `menu`
 --
 
 CREATE TABLE `menu` (
@@ -47,10 +60,18 @@ CREATE TABLE `menu` (
   `Kategori` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data untuk tabel `menu`
+--
+
+INSERT INTO `menu` (`ID_Menu`, `Nama_Menu`, `Deskripsi`, `Harga`, `Kategori`) VALUES
+(4, 'Es Americano', 'Minuman yang cocok k', 16000, 'Minuman'),
+(5, 'Cape Cake', 'Minuman yang cocok k', 15000, 'Makanan');
+
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pelanggan`
+-- Struktur dari tabel `pelanggan`
 --
 
 CREATE TABLE `pelanggan` (
@@ -63,42 +84,15 @@ CREATE TABLE `pelanggan` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pelayan`
---
-
-CREATE TABLE `pelayan` (
-  `ID_Pelayan` int(5) NOT NULL,
-  `Nama` varchar(20) NOT NULL,
-  `Posisi` varchar(20) NOT NULL,
-  `Gaji` int(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `pemesan`
+-- Struktur dari tabel `pemesan`
 --
 
 CREATE TABLE `pemesan` (
-  `ID_Pesanan` int(5) NOT NULL,
+  `ID_Pemesan` int(5) NOT NULL,
   `ID_Menu` int(5) NOT NULL,
   `ID_Pelanggan` int(5) NOT NULL,
-  `ID_Pelayan` int(5) NOT NULL,
   `Tanggal_Pemesanan` date NOT NULL,
   `Total_Harga` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `transaksi`
---
-
-CREATE TABLE `transaksi` (
-  `ID_Transaksi` int(5) NOT NULL,
-  `Metode_Bayar` varchar(20) NOT NULL,
-  `Tanggal_Transaksi` date NOT NULL,
-  `Total_Bayar` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -106,55 +100,38 @@ CREATE TABLE `transaksi` (
 --
 
 --
--- Indexes for table `kasir`
+-- Indeks untuk tabel `karyawan`
 --
-ALTER TABLE `kasir`
-  ADD PRIMARY KEY (`ID_Kasir`);
+ALTER TABLE `karyawan`
+  ADD PRIMARY KEY (`ID_Karyawan`);
 
 --
--- Indexes for table `menu`
+-- Indeks untuk tabel `menu`
 --
 ALTER TABLE `menu`
   ADD PRIMARY KEY (`ID_Menu`);
 
 --
--- Indexes for table `pelanggan`
+-- Indeks untuk tabel `pelanggan`
 --
 ALTER TABLE `pelanggan`
   ADD PRIMARY KEY (`ID_Pelanggan`);
 
 --
--- Indexes for table `pelayan`
---
-ALTER TABLE `pelayan`
-  ADD PRIMARY KEY (`ID_Pelayan`);
-
---
--- Indexes for table `pemesan`
+-- Indeks untuk tabel `pemesan`
 --
 ALTER TABLE `pemesan`
-  ADD PRIMARY KEY (`ID_Pesanan`),
-  ADD KEY `FK_Menu` (`ID_Menu`),
-  ADD KEY `FK_Pelanggan` (`ID_Pelanggan`),
-  ADD KEY `FK_Karyawan` (`ID_Pelayan`);
+  ADD PRIMARY KEY (`ID_Pemesan`);
 
 --
--- Indexes for table `transaksi`
---
-ALTER TABLE `transaksi`
-  ADD PRIMARY KEY (`ID_Transaksi`);
-
---
--- Constraints for dumped tables
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- Constraints for table `pemesan`
+-- AUTO_INCREMENT untuk tabel `menu`
 --
-ALTER TABLE `pemesan`
-  ADD CONSTRAINT `FK_Karyawan` FOREIGN KEY (`ID_Pelayan`) REFERENCES `pelayan` (`ID_Pelayan`),
-  ADD CONSTRAINT `FK_Menu` FOREIGN KEY (`ID_Menu`) REFERENCES `menu` (`ID_Menu`),
-  ADD CONSTRAINT `FK_Pelanggan` FOREIGN KEY (`ID_Pelanggan`) REFERENCES `pelanggan` (`ID_Pelanggan`);
+ALTER TABLE `menu`
+  MODIFY `ID_Menu` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -98,7 +98,7 @@ body {
   border-radius: 4px;
   cursor: pointer;
   font-size: 16px;
-  margin-left: 10px; /* Sesuaikan dengan kebutuhan */
+  margin-left: 10px; 
 }
 
 .btn-tambah-menu:hover {
@@ -114,7 +114,7 @@ body {
   color: #1d1a1a;
 }
 .heading span {
-  background: var(--green);
+  background: var(--fe5303);
   color: #fff;
   display: inline-block;
   padding: 5px 3px;
@@ -300,6 +300,112 @@ body {
 }
 
 /*About Section End*/
+/* AddMenu Start */
+body {
+  font-family: sans-serif;
+ 
+}
+
+table {
+  width: 90%;
+  border-collapse: collapse;
+  margin:100px;
+}
+
+th, td {
+  border: 1px solid black;
+  padding: 4px;
+  color :rgb(0, 0, 0);
+ 
+}
+
+th {
+  background-color: #000;
+  font-weight: bold;
+}
+
+.container {
+  max-width: 500px;
+
+}
+
+.btn {
+  margin-top: 2px;
+}
+
+.table-primary {
+  background-color: #dddddd;
+  font-weight: bold;
+}
+
+
+/* AddMenu End */ 
+
+/* Create Start */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f5f5f5;
+}
+
+.container {
+  width: 50%;
+  margin: auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-top: 50px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button {
+  padding: 10px 15px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.alert {
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 4px;
+  color: #721c24;
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+}
+
+.alert-danger {
+  color: #721c24;
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+}
+
+/* Create End */
 
 /* Menu start */
 
@@ -330,9 +436,11 @@ body {
   backface-visibility: hidden;
   margin-top: 40px;
 }
- h2{
+
+h2{
   color: #fff;
- }
+}
+
 .card:hover {
   transform: scale(.9);
 }
@@ -412,7 +520,7 @@ body {
 
 .card .con-text p button:hover {
   background: #fff;
-  color: #000;
+  color: #fff;
 }
 
 .ul {

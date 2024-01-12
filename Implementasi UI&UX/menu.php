@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tubes</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="fontawesome-free-6.1.1-web/css/all.css" />
+    <link rel="stylesheet" href="fontawesome-free-6.1.1-web/css/brands.css" />
+</head>
+
+<body>
+    <body>
+        <!-- Navbar Start-->
+ 
+            <nav class="navbar">
+                <a class="navbar-logo">Kopi <span>Saya.</span></a>
+
+                <div class="navbar-nav">
+                    <a href="index.php">Home</a>
+                    <a href="#about">About</a>
+                    <a href="menu.php">menu</a>
+                    <a href="#contact">Kontak</a>
+                </div>
+
+                <div class="navbar-extra">
+                    <a href="#" id="search"> <i data-feather="search"></i> </a>
+                    <a href="#" id="shopping-cart"><i data-feather="shopping-cart"></i> </a>
+                    <a href="#" id="hamburger-menu"><i data-feather="menu"></i> </a>
+                    <!-- tambah menu link menu pesanan -->
+                    <a href="tambahpesan.php" class="btn-tambah-menu">Tambah Pesanan</a> 
+                </div>
+            </nav>
+
+        <!-- Navbar End-->
+
+    <!-- Home Section starts -->
+
+    
+
+    <!-- Home Section end -->
+
+
+
+    <!-- Menu Card Section starts -->
+    <section id="special" class="container-fluid">
+        <div class="heading text-center">
+            <h1>Menu <span>Minuman</span></h1>
+        </div>
+        <div class="card-container">
+            <div class="card ">
+                <img src="./img/Menu/Americano.jpg" alt=" ">
+                <div class="con-text ">
+                    <h2 style="color:aliceblue;">Americano</h2>
+                    <p>Iced Americano adalah minuman kopi yang menyegarkan, berani, dan lezat! Es americano merupakan salah satu minuman terbaik di musim panas
+                        <button>
+                            Rp.150000
+                         </button>
+                    </p>
+                </div>
+
+            </div>
+            <div class="card ">
+                <img src="./img/Menu/CaramelLatter.jpg" alt=" ">
+                <div class="con-text ">
+                    <h2 style="color:aliceblue;">Caramel Latte</h2>
+                    <p>Caramel latte adalah jenis minuman kopi yang mengandung espresso, susu, dan saus karamel.
+                        <button>
+                      Rp.12000
+                    </button>
+                    </p>
+                </div>
+            </div>
+
+            <div class="card ">
+                <img src="./img/Menu/cappucino.jpg" alt=" ">
+                <div class="con-text ">
+                    <h2 style="color:aliceblue;">Cappucino</h2>
+                    <p>Rasanya yang manis membuat jenis kopi ini mudah digemari dan bisa diterima oleh lidah semua orang
+                        <button>
+                       Rp.10000
+                    </button>
+                    </p>
+                </div>
+            </div>
+            <div class="card ">
+                <img src="./img/Menu/cafe-expreso.jpg" alt=" ">
+                <div class="con-text ">
+                    <h2 style="color:aliceblue;">Expreso</h2>
+                    <p> kopi yang dihasilkan dari proses penyeduhan kopi dengan tekanan dan suhu tinggi
+                        <button>
+                        Rp.13000
+                    </button>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="utama" class="container-fluid">
+        <div class="heading text-center">
+            <h1>Menu <span>Dessert</span></h1>
+        </div>
+        <div class="card-container">
+            <div class="card ">
+                <img src="./img/Menu/Cholate cupcake.jpg" alt=" ">
+                <div class="con-text ">
+                    <h2 style="color:aliceblue;">Cholate Cupcake</h2>
+                    <p>
+                        <button>
+                        Rp.16.000
+                    </button>
+                    </p>
+                </div>
+            </div>
+            <div class="card ">
+                <img src="./img/Menu/Strawberyy CheseCake.jpg" alt=" ">
+                <div class="con-text ">
+                    <h2 style="color:aliceblue;">Strawberyy CheseCake</h2>
+                    <p>
+                        <button>
+                        Rp.20.000
+                    </button>
+                    </p>
+                </div>
+            </div>
+            <div class="card ">
+                <img src="./img/Menu/Strawberyy Napolen.jpg" alt=" ">
+                <div class="con-text ">
+                    <h2 style="color:aliceblue;">Strawberyy Napolen</h2>
+                    <p>
+                        <button>
+                        Rp.25.000
+                    </button>
+                    </p>
+                </div>
+            </div>
+            <div class="card ">
+                <img src="./img/Menu/Tiramisu Layer Cake.jpg" alt=" ">
+                <div class="con-text ">
+                    <h2 style="color:aliceblue;">Tiramisu</h2>
+                    <p>
+                       Rp.9000
+                    </button>
+                    </p>
+                </div>
+            </div>
+            <div class="card ">
+                <img src="./img/Menu/h o l l a.jfif" alt=" ">
+                <div class="con-text ">
+                    <h2 style="color:aliceblue;">Milli Crepe</h2>
+                    <p>
+                        Rp.15.000
+                    </button>
+                    </p>
+                </div>
+            </div>
+            <div class="card ">
+                <img src="./img/Menu/Matcha crepe torta - a francia és japán csoda-süti - M Matcha.jfif" alt=" ">
+                <div class="con-text ">
+                    <h2 style="color:aliceblue;">Crepe Torta</h2>
+                    <p>Karedok adalah makanan khas Sunda yang mempunyai kemiripan dengan gado-gado. Karedok menyajikan berbagai sayuran dengan saus kacang tanah dengan kepedasan yang bisa menggugah selera..
+                        <button>
+                        Rp.13.000
+                    </button>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="utama" class="container-fluid">
+        <div class="heading text-center">
+            <h1>Menu <span>Makanan</span></h1>
+        </div>
+        <div class="card-container">
+            <div class="card ">
+                <img src="./img/Menu/Nasi Goreng (Indonesian Fried Rice) - Sugar Spice & More.jpg" alt=" ">
+                <div class="con-text ">
+                    <h2 style="color:aliceblue;">Nasi Goreng</h2>
+                    <p>
+                        <button>
+                        Rp.16.000
+                    </button>
+                    </p>
+                </div>
+            </div>
+            <div class="card ">
+                <img src="./img/Menu/Pisang goreng dengan taburi keju dan meises.jpg" alt=" ">
+                <div class="con-text ">
+                    <h2 style="color:aliceblue;">Pisang Goreng</h2>
+                    <p>
+                        <button>
+                        Rp.20.000
+                    </button>
+                    </p>
+                </div>
+            </div>
+            <div class="card ">
+                <img src="./img/Menu/Ayam geprek.jpg" alt=" ">
+                <div class="con-text ">
+                    <h2 style="color:aliceblue;">Ayam Geprek</h2>
+                    <p>
+                        <button>
+                        Rp.25.000
+                    </button>
+                    </p>
+                </div>
+            </div>
+            
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Card Section end -->
+
+    </div>
+    <!-- End of .container -->
+    <!-- footer section end -->
+    <!-- custom js -->
+    <script src="./file js/script.js"></script>
+    <script src="./file js/jquary.js"></script>
+</body>
+
+</html>

@@ -90,6 +90,6 @@
       <button type="submit" name="submit" value="submit" class="btn btn-outline-danger">PESAN</button>
 
     </form>
-    <script src="./file js/script.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>

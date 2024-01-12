@@ -222,8 +222,7 @@
     <!-- End of .container -->
     <!-- footer section end -->
     <!-- custom js -->
-    <script src="./file js/script.js"></script>
-    <script src="./file js/jquary.js"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>

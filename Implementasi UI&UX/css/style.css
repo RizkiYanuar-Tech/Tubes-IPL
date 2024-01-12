@@ -24,7 +24,7 @@ body {
   font-family: "Roboto", sans-serif;
   background-color: var(--bg);
   color: #fff;
-  min-height: 3000px;
+  min-height: 100px;
 }
 
 .navbar {
@@ -103,6 +103,93 @@ body {
 
 .btn-tambah-menu:hover {
   background-color: #45a049;
+}
+
+footer {
+  position: static;
+  bottom: 50%;
+}
+
+.footer {
+  background-color: rgb(68, 68, 68);
+  box-sizing: border-box;
+  width: 100%;
+  text-align: left;
+  font: bold 16px sans-serif;
+  padding: 50px 50px 60px 50px;
+  margin-top: 200px;
+}
+
+.footer .footer-left,
+.footer .footer-center,
+.footer .footer-right {
+  display: inline-block;
+  vertical-align: top;
+}
+
+@media (max-height: 800px) {
+  footer {
+    position: static;
+  }
+  header {
+    padding-top: 40px;
+  }
+}
+
+.footer .footer-left {
+  width: 32%;
+}
+
+.footer h3 {
+  color: #f5f5f5;
+  margin: 0;
+  padding-bottom: 1px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+.footer .footer-left img {
+  width: 35%;
+  vertical-align: middle;
+}
+
+.footer .footer-left .footer-logo {
+  width: 100%;
+}
+
+.footer .footer-copyright {
+  color: #fff;
+  font-size: 14px;
+  font-weight: normal;
+  margin: 10px;
+  padding-top: 2%;
+}
+
+.footer .footer-center {
+  width: 30%;
+  font-size: 14px;
+  display: inline-block;
+  color: #fff;
+}
+
+.footer .footer-center i {
+  padding-top: 2%;
+  background-color: rgb(68, 68, 68);
+  color: #ffffff;
+  font-size: 20px;
+  border-radius: 50%;
+}
+
+.footer .footer-center p {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0px;
+}
+
+.footer .footer-right {
+  width: 35%;
+  text-align: center;
+  line-height: 2;
+  color: #fff;
 }
 
 /* Text */
@@ -191,7 +278,7 @@ body {
 .hero .content {
   padding: 1.4rem 7%;
   max-width: 120rem;
-  padding-left: 41rem;
+  padding-left: 36rem;
 }
 
 .hero .content h1 {
@@ -562,6 +649,7 @@ h2 {
 body {
   width: 100%;
   font-family: Arial, sans-serif;
+  color: #ffffff;
   margin: 0;
   padding: 0;
   background-color: var(--bg);
@@ -642,7 +730,7 @@ button:hover {
 
 .contact-img h1 {
   position: absolute;
-  font-size: 5rem;
+  font-size: 4rem;
   text-align: right;
   top: 30%;
   left: 52%;
@@ -690,7 +778,7 @@ button:hover {
 
 .content {
   background-color: 222228;
-  width: 100%;
+  width: 92%;
   height: 100%;
 }
 /*Contact Section End*/
